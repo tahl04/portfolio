@@ -1,0 +1,41 @@
+body {
+  background-color: #121213;
+}
+
+#skill {
+  margin-top: 150px;
+  padding-left: calc(7% + 50px);
+  width: 100%;
+}
+#skill .skill-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: justify-content;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#skill .skill-wrap ul li {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#skill .skill-wrap ul li p {
+  font-size: 18px;
+  color: #5E85EB;
+  padding-right: 20px;
+}
+#skill .skill-wrap ul li h2 {
+  mix-blend-mode: difference;
+  font-weight: 900;
+  font-size: 170px;
+  line-height: 0.75;
+  color: transparent;
+  -webkit-text-stroke: 1px #5E85EB;
+  transition: 0.2s;
+  position: relative;
+}
+#skill .skill-wrap ul li h2:hover {
+  color: #5E85EB;
+}/*# sourceMappingURL=skill.css.map */

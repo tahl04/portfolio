@@ -338,7 +338,7 @@ html {
   flex-direction: column;
 }
 .main section .section-wrap .t-img-wrap .title-img {
-  width: 100%;
+  width: calc(60% + 200px);
   -webkit-animation: upDown 3s infinite;
           animation: upDown 3s infinite;
 }

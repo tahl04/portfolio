@@ -1,0 +1,57 @@
+@mixin flex($a: space-around, $b: center) {
+    display: flex;
+    justify-content: $a;
+    align-items: $b;
+    @content;
+}
+//main color
+$mC : #5E85EB;
+//base color
+$bC : #121213;
+
+$haunt: #2c2d44;
+$hotPink: #753e58;
+$electroShock: #588d99;
+
+
+body{
+    background-color: $bC;
+}
+#skill{
+    margin-top: 150px;
+    padding-left: calc(7% + 50px);
+    width: 100%;
+    .skill-wrap{
+        width: 100%;
+        @include flex(justify-content, flex-start){
+            flex-direction: column;
+        }
+        ul{
+            li{
+                position: relative;
+                padding-top: 20px;
+                @include flex(flex-start, flex-start){}
+                p{
+                    font-size: 18px;
+                    color: $mC;
+                    padding-right: 20px;
+                    
+                }
+                h2{
+                    mix-blend-mode: difference;
+                    font-weight: 900;
+                    font-size: 170px;
+                    line-height: .75;
+                    // color: $mC;
+                    color: transparent;
+                    -webkit-text-stroke: 1px $mC;
+                    transition: .2s;
+                    position: relative;
+                    &:hover{
+                        color: $mC;
+                    }
+                }
+            }
+        }
+    }
+}

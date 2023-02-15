@@ -147,7 +147,63 @@ body{
         transform: translateY(3px);
     }
 }
-
+@keyframes opa {
+    0% {
+        opacity: 1;
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes head {
+    0% {
+        transform: translateX(0);
+    }
+    38%{
+        transform: translateX(0);
+    }
+    40%{
+        transform: translateX(-2px);
+    }
+    45%{
+        transform: translateX(2px);
+    }
+    50%{
+        transform: translateX(-4px);
+    }
+    55%{
+        transform: translateX(2px);
+    }
+    60%{
+        transform: translateX(-2px);
+    }
+    62%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes blurcan {
+    0% {
+        filter: blur(0);
+    }
+    20%{
+        filter: blur(0);
+    }
+    50%{
+        filter: blur(3px);
+    }
+    80%{
+        filter: blur(0);
+    }
+    100%{
+        filter: blur(0);
+    }
+}
 ::-webkit-scrollbar {
     display: none;
     // width: 10px;
@@ -177,7 +233,7 @@ body{
             .t-left{
                 width: 50%;
                 height: calc(100% - 200px);
-                border: 1px solid #0ff;
+                // border: 1px solid #0ff;
                 position: relative;
                 [class^=t-left-wrap]{
                     width: 100%;
@@ -486,10 +542,46 @@ body{
                         &.t-left-wrap-copy{
                         }
                         .card{
+                            &:after{
+                                content: "";
+                                bottom: 0;
+                                left: 0;
+                                background-size: cover;
+                                position: absolute;
+                                width: 100%;
+                                height: 120px;
+                                border-radius: 8px;
+                                background-image: url(../img/project/vegimix.png);
+                            }
                             &::before{
                                 background-color: rgba(155, 204, 74, .6);
                             }
+                            .ve{
+                                animation: upDown 2.2s infinite;
+                                position: absolute;
+                                width: 350px;
+                                top: -80px;
+                                right: -150px;
+                            }
+                            .lime{
+                                animation: upDown 2.5s infinite;
+                                position: absolute;
+                                width: 480px;
+                                height: auto;
+                                bottom: -150px;
+                                left: -260px;
+                                z-index: 15;
+                            }
+                            .bubble{
+                                animation: opa 4s infinite;
+                                position: absolute;
+                                width: 230px;
+                                top: -10px;
+                                left: -73px;
+                                z-index: 15;
+                            }
                             .card-wrap{
+                                position: absolute;
                                 .blur-wrap{
                                     .blur-one{
                                         background: linear-gradient(149deg, rgba(155, 204, 74,1) 40%, rgb(96, 141, 23) 100%);
@@ -503,6 +595,7 @@ body{
                                     color: #757C72;
                                 }
                                 a{
+                                    z-index: 16;
                                     background: linear-gradient(149deg, rgba(155, 204, 74,1) 20%, rgba(96, 141, 23,1) 100%);
                                 }
                             }
@@ -532,6 +625,32 @@ body{
                         .card{
                             &::before{
                                 background-color: rgba(94, 133, 235, .6);
+                            }
+                            .tahl-head{
+                                animation: head 2.5s infinite;
+                                position: absolute;
+                                width: 340px;
+                                height: auto;
+                                top: -80px;
+                                left: -175px;
+                                z-index: 15;
+                            }
+                            .tahl-text{
+                                position: absolute;
+                                width: 260px;
+                                height: auto;
+                                bottom: -50px;
+                                left: -110px;
+                                z-index: 15;
+                            }
+                            .can-img{
+                                animation: blurcan 2.8s infinite;
+                                position: absolute;
+                                width: 230px;
+                                height: auto;
+                                bottom: -40px;
+                                right: -120px;
+                                z-index: 15;
                             }
                             .card-wrap{
                                 .blur-wrap{

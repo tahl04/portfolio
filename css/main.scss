@@ -28,6 +28,7 @@ $electroShock: #588d99;
         transform: translateY(7px);
     }
 }
+
 @keyframes blurShadow {
     0% {
         width: 60%;
@@ -212,7 +213,7 @@ $electroShock: #588d99;
                     flex-direction: column;
                 }
                 .title-img{
-                    width: 100%;
+                    width: calc(60% + 200px);
                     animation: upDown 3s infinite;
                 }
                 .blur-shadow{
