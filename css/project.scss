@@ -190,18 +190,23 @@ body{
 @keyframes blurcan {
     0% {
         filter: blur(0);
+        scale: 1;
     }
-    20%{
+    15%{
         filter: blur(0);
+        scale: 1;
     }
     50%{
-        filter: blur(3px);
+        filter: blur(2px);
+        scale: 1.01;
     }
-    80%{
+    85%{
         filter: blur(0);
+        scale: 1;
     }
     100%{
         filter: blur(0);
+        scale: 1;
     }
 }
 ::-webkit-scrollbar {

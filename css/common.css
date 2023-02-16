@@ -60,7 +60,7 @@ ol, ul {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 50;
   background-image: url(../img/noise.png);
   -webkit-animation: noise 0.2s step-start infinite;
           animation: noise 0.2s step-start infinite;
