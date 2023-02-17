@@ -1,0 +1,4128 @@
+body {
+  background-color: #121213;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  perspective: 1200px;
+  overflow: hidden;
+}
+body *:not(:empty) {
+  transform-style: preserve-3d;
+}
+
+.scene {
+  position: absolute;
+  font-size: 24px;
+  -webkit-animation: sceneRotate 45s infinite linear;
+          animation: sceneRotate 45s infinite linear;
+}
+@-webkit-keyframes sceneRotate {
+  to {
+    transform: rotateX(360deg) rotateY(1080deg);
+  }
+}
+@keyframes sceneRotate {
+  to {
+    transform: rotateX(360deg) rotateY(1080deg);
+  }
+}
+
+.cubes {
+  -webkit-animation: cubesScale 15s infinite ease-in;
+          animation: cubesScale 15s infinite ease-in;
+}
+@-webkit-keyframes cubesScale {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.8, 1.8, 1.8);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes cubesScale {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.8, 1.8, 1.8);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.cube, .mainCube {
+  position: absolute;
+  inset: calc(var(--hSize) * -1);
+}
+
+.cube {
+  --hSize: 0.5em;
+  --bgSize: 5em;
+}
+.cube:nth-child(1) {
+  --x: -2;
+  --y: -2;
+  --z: -2;
+}
+.cube:nth-child(2) {
+  --x: -2;
+  --y: -2;
+  --z: -1;
+}
+.cube:nth-child(3) {
+  --x: -2;
+  --y: -2;
+  --z: 0;
+}
+.cube:nth-child(4) {
+  --x: -2;
+  --y: -2;
+  --z: 1;
+}
+.cube:nth-child(5) {
+  --x: -2;
+  --y: -2;
+  --z: 2;
+}
+.cube:nth-child(6) {
+  --x: -2;
+  --y: -1;
+  --z: -2;
+}
+.cube:nth-child(7) {
+  --x: -2;
+  --y: -1;
+  --z: -1;
+}
+.cube:nth-child(8) {
+  --x: -2;
+  --y: -1;
+  --z: 0;
+}
+.cube:nth-child(9) {
+  --x: -2;
+  --y: -1;
+  --z: 1;
+}
+.cube:nth-child(10) {
+  --x: -2;
+  --y: -1;
+  --z: 2;
+}
+.cube:nth-child(11) {
+  --x: -2;
+  --y: 0;
+  --z: -2;
+}
+.cube:nth-child(12) {
+  --x: -2;
+  --y: 0;
+  --z: -1;
+}
+.cube:nth-child(13) {
+  --x: -2;
+  --y: 0;
+  --z: 0;
+}
+.cube:nth-child(14) {
+  --x: -2;
+  --y: 0;
+  --z: 1;
+}
+.cube:nth-child(15) {
+  --x: -2;
+  --y: 0;
+  --z: 2;
+}
+.cube:nth-child(16) {
+  --x: -2;
+  --y: 1;
+  --z: -2;
+}
+.cube:nth-child(17) {
+  --x: -2;
+  --y: 1;
+  --z: -1;
+}
+.cube:nth-child(18) {
+  --x: -2;
+  --y: 1;
+  --z: 0;
+}
+.cube:nth-child(19) {
+  --x: -2;
+  --y: 1;
+  --z: 1;
+}
+.cube:nth-child(20) {
+  --x: -2;
+  --y: 1;
+  --z: 2;
+}
+.cube:nth-child(21) {
+  --x: -2;
+  --y: 2;
+  --z: -2;
+}
+.cube:nth-child(22) {
+  --x: -2;
+  --y: 2;
+  --z: -1;
+}
+.cube:nth-child(23) {
+  --x: -2;
+  --y: 2;
+  --z: 0;
+}
+.cube:nth-child(24) {
+  --x: -2;
+  --y: 2;
+  --z: 1;
+}
+.cube:nth-child(25) {
+  --x: -2;
+  --y: 2;
+  --z: 2;
+}
+.cube:nth-child(26) {
+  --x: -1;
+  --y: -2;
+  --z: -2;
+}
+.cube:nth-child(27) {
+  --x: -1;
+  --y: -2;
+  --z: -1;
+}
+.cube:nth-child(28) {
+  --x: -1;
+  --y: -2;
+  --z: 0;
+}
+.cube:nth-child(29) {
+  --x: -1;
+  --y: -2;
+  --z: 1;
+}
+.cube:nth-child(30) {
+  --x: -1;
+  --y: -2;
+  --z: 2;
+}
+.cube:nth-child(31) {
+  --x: -1;
+  --y: -1;
+  --z: -2;
+}
+.cube:nth-child(32) {
+  --x: -1;
+  --y: -1;
+  --z: 2;
+}
+.cube:nth-child(33) {
+  --x: -1;
+  --y: 0;
+  --z: -2;
+}
+.cube:nth-child(34) {
+  --x: -1;
+  --y: 0;
+  --z: 2;
+}
+.cube:nth-child(35) {
+  --x: -1;
+  --y: 1;
+  --z: -2;
+}
+.cube:nth-child(36) {
+  --x: -1;
+  --y: 1;
+  --z: 2;
+}
+.cube:nth-child(37) {
+  --x: -1;
+  --y: 2;
+  --z: -2;
+}
+.cube:nth-child(38) {
+  --x: -1;
+  --y: 2;
+  --z: -1;
+}
+.cube:nth-child(39) {
+  --x: -1;
+  --y: 2;
+  --z: 0;
+}
+.cube:nth-child(40) {
+  --x: -1;
+  --y: 2;
+  --z: 1;
+}
+.cube:nth-child(41) {
+  --x: -1;
+  --y: 2;
+  --z: 2;
+}
+.cube:nth-child(42) {
+  --x: 0;
+  --y: -2;
+  --z: -2;
+}
+.cube:nth-child(43) {
+  --x: 0;
+  --y: -2;
+  --z: -1;
+}
+.cube:nth-child(44) {
+  --x: 0;
+  --y: -2;
+  --z: 0;
+}
+.cube:nth-child(45) {
+  --x: 0;
+  --y: -2;
+  --z: 1;
+}
+.cube:nth-child(46) {
+  --x: 0;
+  --y: -2;
+  --z: 2;
+}
+.cube:nth-child(47) {
+  --x: 0;
+  --y: -1;
+  --z: -2;
+}
+.cube:nth-child(48) {
+  --x: 0;
+  --y: -1;
+  --z: 2;
+}
+.cube:nth-child(49) {
+  --x: 0;
+  --y: 0;
+  --z: -2;
+}
+.cube:nth-child(50) {
+  --x: 0;
+  --y: 0;
+  --z: 2;
+}
+.cube:nth-child(51) {
+  --x: 0;
+  --y: 1;
+  --z: -2;
+}
+.cube:nth-child(52) {
+  --x: 0;
+  --y: 1;
+  --z: 2;
+}
+.cube:nth-child(53) {
+  --x: 0;
+  --y: 2;
+  --z: -2;
+}
+.cube:nth-child(54) {
+  --x: 0;
+  --y: 2;
+  --z: -1;
+}
+.cube:nth-child(55) {
+  --x: 0;
+  --y: 2;
+  --z: 0;
+}
+.cube:nth-child(56) {
+  --x: 0;
+  --y: 2;
+  --z: 1;
+}
+.cube:nth-child(57) {
+  --x: 0;
+  --y: 2;
+  --z: 2;
+}
+.cube:nth-child(58) {
+  --x: 1;
+  --y: -2;
+  --z: -2;
+}
+.cube:nth-child(59) {
+  --x: 1;
+  --y: -2;
+  --z: -1;
+}
+.cube:nth-child(60) {
+  --x: 1;
+  --y: -2;
+  --z: 0;
+}
+.cube:nth-child(61) {
+  --x: 1;
+  --y: -2;
+  --z: 1;
+}
+.cube:nth-child(62) {
+  --x: 1;
+  --y: -2;
+  --z: 2;
+}
+.cube:nth-child(63) {
+  --x: 1;
+  --y: -1;
+  --z: -2;
+}
+.cube:nth-child(64) {
+  --x: 1;
+  --y: -1;
+  --z: 2;
+}
+.cube:nth-child(65) {
+  --x: 1;
+  --y: 0;
+  --z: -2;
+}
+.cube:nth-child(66) {
+  --x: 1;
+  --y: 0;
+  --z: 2;
+}
+.cube:nth-child(67) {
+  --x: 1;
+  --y: 1;
+  --z: -2;
+}
+.cube:nth-child(68) {
+  --x: 1;
+  --y: 1;
+  --z: 2;
+}
+.cube:nth-child(69) {
+  --x: 1;
+  --y: 2;
+  --z: -2;
+}
+.cube:nth-child(70) {
+  --x: 1;
+  --y: 2;
+  --z: -1;
+}
+.cube:nth-child(71) {
+  --x: 1;
+  --y: 2;
+  --z: 0;
+}
+.cube:nth-child(72) {
+  --x: 1;
+  --y: 2;
+  --z: 1;
+}
+.cube:nth-child(73) {
+  --x: 1;
+  --y: 2;
+  --z: 2;
+}
+.cube:nth-child(74) {
+  --x: 2;
+  --y: -2;
+  --z: -2;
+}
+.cube:nth-child(75) {
+  --x: 2;
+  --y: -2;
+  --z: -1;
+}
+.cube:nth-child(76) {
+  --x: 2;
+  --y: -2;
+  --z: 0;
+}
+.cube:nth-child(77) {
+  --x: 2;
+  --y: -2;
+  --z: 1;
+}
+.cube:nth-child(78) {
+  --x: 2;
+  --y: -2;
+  --z: 2;
+}
+.cube:nth-child(79) {
+  --x: 2;
+  --y: -1;
+  --z: -2;
+}
+.cube:nth-child(80) {
+  --x: 2;
+  --y: -1;
+  --z: -1;
+}
+.cube:nth-child(81) {
+  --x: 2;
+  --y: -1;
+  --z: 0;
+}
+.cube:nth-child(82) {
+  --x: 2;
+  --y: -1;
+  --z: 1;
+}
+.cube:nth-child(83) {
+  --x: 2;
+  --y: -1;
+  --z: 2;
+}
+.cube:nth-child(84) {
+  --x: 2;
+  --y: 0;
+  --z: -2;
+}
+.cube:nth-child(85) {
+  --x: 2;
+  --y: 0;
+  --z: -1;
+}
+.cube:nth-child(86) {
+  --x: 2;
+  --y: 0;
+  --z: 0;
+}
+.cube:nth-child(87) {
+  --x: 2;
+  --y: 0;
+  --z: 1;
+}
+.cube:nth-child(88) {
+  --x: 2;
+  --y: 0;
+  --z: 2;
+}
+.cube:nth-child(89) {
+  --x: 2;
+  --y: 1;
+  --z: -2;
+}
+.cube:nth-child(90) {
+  --x: 2;
+  --y: 1;
+  --z: -1;
+}
+.cube:nth-child(91) {
+  --x: 2;
+  --y: 1;
+  --z: 0;
+}
+.cube:nth-child(92) {
+  --x: 2;
+  --y: 1;
+  --z: 1;
+}
+.cube:nth-child(93) {
+  --x: 2;
+  --y: 1;
+  --z: 2;
+}
+.cube:nth-child(94) {
+  --x: 2;
+  --y: 2;
+  --z: -2;
+}
+.cube:nth-child(95) {
+  --x: 2;
+  --y: 2;
+  --z: -1;
+}
+.cube:nth-child(96) {
+  --x: 2;
+  --y: 2;
+  --z: 0;
+}
+.cube:nth-child(97) {
+  --x: 2;
+  --y: 2;
+  --z: 1;
+}
+.cube:nth-child(98) {
+  --x: 2;
+  --y: 2;
+  --z: 2;
+}
+.cube:nth-child(1) {
+  -webkit-animation: cubeTransform0 15s infinite ease-in;
+          animation: cubeTransform0 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform0 {
+  0%, 13.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform0 {
+  0%, 13.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(2) {
+  -webkit-animation: cubeTransform1 15s infinite ease-in;
+          animation: cubeTransform1 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform1 {
+  0%, 2.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  17.65% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  32.65%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 2.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform1 {
+  0%, 2.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  17.65% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  32.65%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 2.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(3) {
+  -webkit-animation: cubeTransform2 15s infinite ease-in;
+          animation: cubeTransform2 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform2 {
+  0%, 11.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  26.63% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  41.63%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 11.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform2 {
+  0%, 11.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  26.63% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  41.63%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 11.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(4) {
+  -webkit-animation: cubeTransform3 15s infinite ease-in;
+          animation: cubeTransform3 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform3 {
+  0%, 64.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  79.47% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  94.47%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 64.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform3 {
+  0%, 64.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  79.47% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  94.47%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 64.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(5) {
+  -webkit-animation: cubeTransform4 15s infinite ease-in;
+          animation: cubeTransform4 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform4 {
+  0%, 18.67% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  33.67% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  48.67%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 18.67% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform4 {
+  0%, 18.67% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  33.67% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  48.67%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 18.67% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(6) {
+  -webkit-animation: cubeTransform5 15s infinite ease-in;
+          animation: cubeTransform5 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform5 {
+  0%, 46.96% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  61.96% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  76.96%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 46.96% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform5 {
+  0%, 46.96% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  61.96% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  76.96%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 46.96% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(7) {
+  -webkit-animation: cubeTransform6 15s infinite ease-in;
+          animation: cubeTransform6 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform6 {
+  0%, 4.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.79% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.79%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform6 {
+  0%, 4.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.79% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.79%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(8) {
+  -webkit-animation: cubeTransform7 15s infinite ease-in;
+          animation: cubeTransform7 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform7 {
+  0%, 3.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  18.15% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33.15%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 3.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform7 {
+  0%, 3.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  18.15% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33.15%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 3.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(9) {
+  -webkit-animation: cubeTransform8 15s infinite ease-in;
+          animation: cubeTransform8 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform8 {
+  0%, 4.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.09% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.09%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform8 {
+  0%, 4.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.09% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.09%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(10) {
+  -webkit-animation: cubeTransform9 15s infinite ease-in;
+          animation: cubeTransform9 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform9 {
+  0%, 54.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  69.49% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  84.49%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 54.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform9 {
+  0%, 54.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  69.49% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  84.49%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 54.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(11) {
+  -webkit-animation: cubeTransform10 15s infinite ease-in;
+          animation: cubeTransform10 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform10 {
+  0%, 51.24% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  66.24% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81.24%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 51.24% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform10 {
+  0%, 51.24% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  66.24% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81.24%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 51.24% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(12) {
+  -webkit-animation: cubeTransform11 15s infinite ease-in;
+          animation: cubeTransform11 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform11 {
+  0%, 19.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  34.45% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  49.45%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 19.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform11 {
+  0%, 19.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  34.45% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  49.45%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 19.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(13) {
+  -webkit-animation: cubeTransform12 15s infinite ease-in;
+          animation: cubeTransform12 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform12 {
+  0%, 57.83% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  72.83% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  87.83%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 57.83% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform12 {
+  0%, 57.83% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  72.83% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  87.83%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 57.83% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(14) {
+  -webkit-animation: cubeTransform13 15s infinite ease-in;
+          animation: cubeTransform13 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform13 {
+  0%, 19.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  34.36% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  49.36%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 19.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform13 {
+  0%, 19.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  34.36% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  49.36%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 19.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(15) {
+  -webkit-animation: cubeTransform14 15s infinite ease-in;
+          animation: cubeTransform14 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform14 {
+  0%, 37.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  52.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  67.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 37.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform14 {
+  0%, 37.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  52.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  67.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 37.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(16) {
+  -webkit-animation: cubeTransform15 15s infinite ease-in;
+          animation: cubeTransform15 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform15 {
+  0%, 33.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.71% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.71%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform15 {
+  0%, 33.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.71% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.71%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(17) {
+  -webkit-animation: cubeTransform16 15s infinite ease-in;
+          animation: cubeTransform16 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform16 {
+  0%, 38.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  53.73% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  68.73%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 38.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform16 {
+  0%, 38.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  53.73% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  68.73%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 38.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(18) {
+  -webkit-animation: cubeTransform17 15s infinite ease-in;
+          animation: cubeTransform17 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform17 {
+  0%, 49.12% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.12% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.12%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.12% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform17 {
+  0%, 49.12% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.12% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.12%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.12% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(19) {
+  -webkit-animation: cubeTransform18 15s infinite ease-in;
+          animation: cubeTransform18 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform18 {
+  0%, 13.9% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.9% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.9%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.9% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform18 {
+  0%, 13.9% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.9% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.9%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.9% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(20) {
+  -webkit-animation: cubeTransform19 15s infinite ease-in;
+          animation: cubeTransform19 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform19 {
+  0%, 4.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.06% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.06%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform19 {
+  0%, 4.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.06% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.06%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(21) {
+  -webkit-animation: cubeTransform20 15s infinite ease-in;
+          animation: cubeTransform20 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform20 {
+  0%, 8.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.7% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.7%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform20 {
+  0%, 8.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.7% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.7%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(22) {
+  -webkit-animation: cubeTransform21 15s infinite ease-in;
+          animation: cubeTransform21 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform21 {
+  0%, 13.44% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.44% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.44%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.44% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform21 {
+  0%, 13.44% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.44% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.44%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.44% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(23) {
+  -webkit-animation: cubeTransform22 15s infinite ease-in;
+          animation: cubeTransform22 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform22 {
+  0%, 27.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  42.3% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  57.3%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 27.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform22 {
+  0%, 27.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  42.3% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  57.3%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 27.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(24) {
+  -webkit-animation: cubeTransform23 15s infinite ease-in;
+          animation: cubeTransform23 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform23 {
+  0%, 3.21% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  18.21% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33.21%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 3.21% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform23 {
+  0%, 3.21% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  18.21% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33.21%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 3.21% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(25) {
+  -webkit-animation: cubeTransform24 15s infinite ease-in;
+          animation: cubeTransform24 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform24 {
+  0%, 21.78% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  36.78% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  51.78%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 21.78% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform24 {
+  0%, 21.78% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  36.78% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  51.78%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 21.78% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(26) {
+  -webkit-animation: cubeTransform25 15s infinite ease-in;
+          animation: cubeTransform25 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform25 {
+  0%, 33.28% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.28% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.28%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.28% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform25 {
+  0%, 33.28% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.28% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.28%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.28% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(27) {
+  -webkit-animation: cubeTransform26 15s infinite ease-in;
+          animation: cubeTransform26 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform26 {
+  0%, 51.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  66.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 51.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform26 {
+  0%, 51.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  66.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 51.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(28) {
+  -webkit-animation: cubeTransform27 15s infinite ease-in;
+          animation: cubeTransform27 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform27 {
+  0%, 26.46% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  41.46% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  56.46%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 26.46% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform27 {
+  0%, 26.46% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  41.46% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  56.46%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 26.46% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(29) {
+  -webkit-animation: cubeTransform28 15s infinite ease-in;
+          animation: cubeTransform28 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform28 {
+  0%, 16.11% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  31.11% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  46.11%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 16.11% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform28 {
+  0%, 16.11% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  31.11% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  46.11%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 16.11% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(30) {
+  -webkit-animation: cubeTransform29 15s infinite ease-in;
+          animation: cubeTransform29 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform29 {
+  0%, 10.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  25.38% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40.38%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 10.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform29 {
+  0%, 10.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  25.38% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40.38%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 10.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(31) {
+  -webkit-animation: cubeTransform30 15s infinite ease-in;
+          animation: cubeTransform30 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform30 {
+  0%, 47.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  62.23% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  77.23%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 47.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform30 {
+  0%, 47.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  62.23% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  77.23%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 47.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(32) {
+  -webkit-animation: cubeTransform31 15s infinite ease-in;
+          animation: cubeTransform31 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform31 {
+  0%, 26.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  41.3% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  56.3%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 26.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform31 {
+  0%, 26.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  41.3% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  56.3%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 26.3% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(33) {
+  -webkit-animation: cubeTransform32 15s infinite ease-in;
+          animation: cubeTransform32 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform32 {
+  0%, 18.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  33.76% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  48.76%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 18.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform32 {
+  0%, 18.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  33.76% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  48.76%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 18.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(34) {
+  -webkit-animation: cubeTransform33 15s infinite ease-in;
+          animation: cubeTransform33 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform33 {
+  0%, 25.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  40.06% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  55.06%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 25.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform33 {
+  0%, 25.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  40.06% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  55.06%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 25.06% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(35) {
+  -webkit-animation: cubeTransform34 15s infinite ease-in;
+          animation: cubeTransform34 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform34 {
+  0%, 48.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  63.08% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  78.08%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 48.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform34 {
+  0%, 48.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  63.08% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  78.08%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 48.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(36) {
+  -webkit-animation: cubeTransform35 15s infinite ease-in;
+          animation: cubeTransform35 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform35 {
+  0%, 39.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  54.22% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  69.22%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 39.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform35 {
+  0%, 39.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  54.22% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  69.22%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 39.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(37) {
+  -webkit-animation: cubeTransform36 15s infinite ease-in;
+          animation: cubeTransform36 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform36 {
+  0%, 44.31% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  59.31% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  74.31%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 44.31% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform36 {
+  0%, 44.31% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  59.31% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  74.31%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 44.31% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(38) {
+  -webkit-animation: cubeTransform37 15s infinite ease-in;
+          animation: cubeTransform37 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform37 {
+  0%, 34.74% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  49.74% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  64.74%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 34.74% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform37 {
+  0%, 34.74% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  49.74% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  64.74%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 34.74% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(39) {
+  -webkit-animation: cubeTransform38 15s infinite ease-in;
+          animation: cubeTransform38 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform38 {
+  0%, 34.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  49.08% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  64.08%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 34.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform38 {
+  0%, 34.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  49.08% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  64.08%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 34.08% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(40) {
+  -webkit-animation: cubeTransform39 15s infinite ease-in;
+          animation: cubeTransform39 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform39 {
+  0%, 35.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  50.39% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  65.39%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 35.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform39 {
+  0%, 35.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  50.39% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  65.39%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 35.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(41) {
+  -webkit-animation: cubeTransform40 15s infinite ease-in;
+          animation: cubeTransform40 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform40 {
+  0%, 56.68% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  71.68% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  86.68%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 56.68% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform40 {
+  0%, 56.68% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  71.68% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  86.68%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 56.68% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(42) {
+  -webkit-animation: cubeTransform41 15s infinite ease-in;
+          animation: cubeTransform41 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform41 {
+  0%, 15.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  30.42% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  45.42%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 15.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform41 {
+  0%, 15.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  30.42% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  45.42%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 15.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(43) {
+  -webkit-animation: cubeTransform42 15s infinite ease-in;
+          animation: cubeTransform42 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform42 {
+  0%, 8% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform42 {
+  0%, 8% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(44) {
+  -webkit-animation: cubeTransform43 15s infinite ease-in;
+          animation: cubeTransform43 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform43 {
+  0%, 49.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.61% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.61%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform43 {
+  0%, 49.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.61% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.61%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(45) {
+  -webkit-animation: cubeTransform44 15s infinite ease-in;
+          animation: cubeTransform44 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform44 {
+  0%, 41.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  56.47% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  71.47%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 41.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform44 {
+  0%, 41.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  56.47% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  71.47%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 41.47% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(46) {
+  -webkit-animation: cubeTransform45 15s infinite ease-in;
+          animation: cubeTransform45 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform45 {
+  0%, 13.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.36% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.36%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform45 {
+  0%, 13.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  28.36% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  43.36%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 13.36% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(47) {
+  -webkit-animation: cubeTransform46 15s infinite ease-in;
+          animation: cubeTransform46 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform46 {
+  0%, 14.94% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  29.94% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  44.94%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 14.94% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform46 {
+  0%, 14.94% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  29.94% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  44.94%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 14.94% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(48) {
+  -webkit-animation: cubeTransform47 15s infinite ease-in;
+          animation: cubeTransform47 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform47 {
+  0%, 20.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  35.71% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  50.71%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 20.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform47 {
+  0%, 20.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  35.71% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  50.71%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 20.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(49) {
+  -webkit-animation: cubeTransform48 15s infinite ease-in;
+          animation: cubeTransform48 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform48 {
+  0%, 36.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  51.95% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  66.95%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 36.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform48 {
+  0%, 36.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  51.95% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  66.95%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 36.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(50) {
+  -webkit-animation: cubeTransform49 15s infinite ease-in;
+          animation: cubeTransform49 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform49 {
+  0%, 18.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  33.84% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  48.84%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 18.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform49 {
+  0%, 18.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  33.84% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  48.84%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 18.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(51) {
+  -webkit-animation: cubeTransform50 15s infinite ease-in;
+          animation: cubeTransform50 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform50 {
+  0%, 67.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  82.38% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  97.38%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 67.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform50 {
+  0%, 67.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  82.38% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  97.38%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 67.38% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(52) {
+  -webkit-animation: cubeTransform51 15s infinite ease-in;
+          animation: cubeTransform51 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform51 {
+  0%, 10.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  25.42% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40.42%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 10.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform51 {
+  0%, 10.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  25.42% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40.42%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 10.42% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(53) {
+  -webkit-animation: cubeTransform52 15s infinite ease-in;
+          animation: cubeTransform52 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform52 {
+  0%, 8.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.39% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.39%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform52 {
+  0%, 8.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.39% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.39%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.39% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(54) {
+  -webkit-animation: cubeTransform53 15s infinite ease-in;
+          animation: cubeTransform53 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform53 {
+  0%, 8.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.45% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.45%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform53 {
+  0%, 8.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.45% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.45%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.45% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(55) {
+  -webkit-animation: cubeTransform54 15s infinite ease-in;
+          animation: cubeTransform54 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform54 {
+  0%, 40.58% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  55.58% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  70.58%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 40.58% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform54 {
+  0%, 40.58% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  55.58% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  70.58%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 40.58% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(56) {
+  -webkit-animation: cubeTransform55 15s infinite ease-in;
+          animation: cubeTransform55 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform55 {
+  0%, 9.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  24.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  39.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 9.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform55 {
+  0%, 9.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  24.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  39.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 9.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(57) {
+  -webkit-animation: cubeTransform56 15s infinite ease-in;
+          animation: cubeTransform56 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform56 {
+  0%, 8.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.71% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.71%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform56 {
+  0%, 8.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  23.71% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  38.71%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 8.71% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(58) {
+  -webkit-animation: cubeTransform57 15s infinite ease-in;
+          animation: cubeTransform57 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform57 {
+  0%, 67.85% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  82.85% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  97.85%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 67.85% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform57 {
+  0%, 67.85% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  82.85% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  97.85%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 67.85% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(59) {
+  -webkit-animation: cubeTransform58 15s infinite ease-in;
+          animation: cubeTransform58 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform58 {
+  0%, 44.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  59.73% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  74.73%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 44.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform58 {
+  0%, 44.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  59.73% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  74.73%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 44.73% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(60) {
+  -webkit-animation: cubeTransform59 15s infinite ease-in;
+          animation: cubeTransform59 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform59 {
+  0%, 17.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  32.55% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  47.55%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 17.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform59 {
+  0%, 17.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  32.55% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  47.55%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 17.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(61) {
+  -webkit-animation: cubeTransform60 15s infinite ease-in;
+          animation: cubeTransform60 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform60 {
+  0%, 56.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  71.25% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  86.25%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 56.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform60 {
+  0%, 56.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  71.25% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  86.25%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 56.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(62) {
+  -webkit-animation: cubeTransform61 15s infinite ease-in;
+          animation: cubeTransform61 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform61 {
+  0%, 33.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform61 {
+  0%, 33.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(63) {
+  -webkit-animation: cubeTransform62 15s infinite ease-in;
+          animation: cubeTransform62 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform62 {
+  0%, 54.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  69.55% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  84.55%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 54.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform62 {
+  0%, 54.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  69.55% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  84.55%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 54.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(64) {
+  -webkit-animation: cubeTransform63 15s infinite ease-in;
+          animation: cubeTransform63 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform63 {
+  0%, 57.98% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  72.98% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  87.98%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 57.98% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform63 {
+  0%, 57.98% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  72.98% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  87.98%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 57.98% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(65) {
+  -webkit-animation: cubeTransform64 15s infinite ease-in;
+          animation: cubeTransform64 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform64 {
+  0%, 67.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  82.99% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  97.99%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 67.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform64 {
+  0%, 67.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  82.99% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  97.99%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 67.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(66) {
+  -webkit-animation: cubeTransform65 15s infinite ease-in;
+          animation: cubeTransform65 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform65 {
+  0%, 32.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  47.7% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  62.7%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 32.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform65 {
+  0%, 32.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  47.7% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  62.7%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 32.7% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(67) {
+  -webkit-animation: cubeTransform66 15s infinite ease-in;
+          animation: cubeTransform66 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform66 {
+  0%, 47.91% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  62.91% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  77.91%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 47.91% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform66 {
+  0%, 47.91% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  62.91% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  77.91%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 47.91% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(68) {
+  -webkit-animation: cubeTransform67 15s infinite ease-in;
+          animation: cubeTransform67 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform67 {
+  0%, 4.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.99% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.99%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform67 {
+  0%, 4.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  19.99% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  34.99%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 4.99% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(69) {
+  -webkit-animation: cubeTransform68 15s infinite ease-in;
+          animation: cubeTransform68 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform68 {
+  0%, 17.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  32.15% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  47.15%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 17.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform68 {
+  0%, 17.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  32.15% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  47.15%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 17.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(70) {
+  -webkit-animation: cubeTransform69 15s infinite ease-in;
+          animation: cubeTransform69 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform69 {
+  0%, 28.05% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  43.05% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  58.05%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 28.05% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform69 {
+  0%, 28.05% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  43.05% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  58.05%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 28.05% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(71) {
+  -webkit-animation: cubeTransform70 15s infinite ease-in;
+          animation: cubeTransform70 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform70 {
+  0%, 68.93% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  83.93% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  98.93%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 68.93% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform70 {
+  0%, 68.93% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  83.93% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  98.93%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 68.93% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(72) {
+  -webkit-animation: cubeTransform71 15s infinite ease-in;
+          animation: cubeTransform71 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform71 {
+  0%, 41.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  56.61% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  71.61%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 41.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform71 {
+  0%, 41.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  56.61% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  71.61%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 41.61% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(73) {
+  -webkit-animation: cubeTransform72 15s infinite ease-in;
+          animation: cubeTransform72 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform72 {
+  0%, 7.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  22.25% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  37.25%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 7.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform72 {
+  0%, 7.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  22.25% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  37.25%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 7.25% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(74) {
+  -webkit-animation: cubeTransform73 15s infinite ease-in;
+          animation: cubeTransform73 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform73 {
+  0%, 46.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  61.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  76.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 46.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform73 {
+  0%, 46.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  61.72% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  76.72%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 46.72% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(75) {
+  -webkit-animation: cubeTransform74 15s infinite ease-in;
+          animation: cubeTransform74 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform74 {
+  0%, 10.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  25.23% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40.23%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 10.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform74 {
+  0%, 10.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  25.23% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40.23%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 10.23% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(76) {
+  -webkit-animation: cubeTransform75 15s infinite ease-in;
+          animation: cubeTransform75 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform75 {
+  0%, 29.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  44.79% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  59.79%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 29.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform75 {
+  0%, 29.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  44.79% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  59.79%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 29.79% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(77) {
+  -webkit-animation: cubeTransform76 15s infinite ease-in;
+          animation: cubeTransform76 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform76 {
+  0%, 66.2% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  81.2% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  96.2%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 66.2% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform76 {
+  0%, 66.2% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  81.2% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  96.2%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 66.2% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(78) {
+  -webkit-animation: cubeTransform77 15s infinite ease-in;
+          animation: cubeTransform77 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform77 {
+  0%, 66.87% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  81.87% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  96.87%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 66.87% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform77 {
+  0%, 66.87% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  81.87% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  96.87%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 66.87% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(79) {
+  -webkit-animation: cubeTransform78 15s infinite ease-in;
+          animation: cubeTransform78 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform78 {
+  0%, 33.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.84% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.84%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform78 {
+  0%, 33.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  48.84% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  63.84%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 33.84% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(80) {
+  -webkit-animation: cubeTransform79 15s infinite ease-in;
+          animation: cubeTransform79 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform79 {
+  0%, 57.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  72.65% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  87.65%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 57.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform79 {
+  0%, 57.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  72.65% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  87.65%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 57.65% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(81) {
+  -webkit-animation: cubeTransform80 15s infinite ease-in;
+          animation: cubeTransform80 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform80 {
+  0%, 31.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  46.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  61.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 31.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform80 {
+  0%, 31.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  46.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  61.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 31.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(82) {
+  -webkit-animation: cubeTransform81 15s infinite ease-in;
+          animation: cubeTransform81 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform81 {
+  0%, 61.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  76.22% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  91.22%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 61.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform81 {
+  0%, 61.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  76.22% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  91.22%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 61.22% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(83) {
+  -webkit-animation: cubeTransform82 15s infinite ease-in;
+          animation: cubeTransform82 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform82 {
+  0%, 32.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  47.63% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  62.63%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 32.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform82 {
+  0%, 32.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  47.63% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  62.63%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 32.63% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(84) {
+  -webkit-animation: cubeTransform83 15s infinite ease-in;
+          animation: cubeTransform83 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform83 {
+  0%, 32.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  47.55% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  62.55%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 32.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform83 {
+  0%, 32.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  47.55% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  62.55%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 32.55% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(85) {
+  -webkit-animation: cubeTransform84 15s infinite ease-in;
+          animation: cubeTransform84 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform84 {
+  0%, 61.27% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  76.27% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  91.27%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 61.27% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform84 {
+  0%, 61.27% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  76.27% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  91.27%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 61.27% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(86) {
+  -webkit-animation: cubeTransform85 15s infinite ease-in;
+          animation: cubeTransform85 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform85 {
+  0%, 50.89% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  65.89% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  80.89%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 50.89% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform85 {
+  0%, 50.89% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  65.89% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  80.89%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 50.89% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(87) {
+  -webkit-animation: cubeTransform86 15s infinite ease-in;
+          animation: cubeTransform86 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform86 {
+  0%, 23.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  38.95% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  53.95%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 23.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform86 {
+  0%, 23.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  38.95% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  53.95%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 23.95% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(88) {
+  -webkit-animation: cubeTransform87 15s infinite ease-in;
+          animation: cubeTransform87 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform87 {
+  0%, 50.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  65.76% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  80.76%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 50.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform87 {
+  0%, 50.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  65.76% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  80.76%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 50.76% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(89) {
+  -webkit-animation: cubeTransform88 15s infinite ease-in;
+          animation: cubeTransform88 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform88 {
+  0%, 49.41% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.41% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.41%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.41% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform88 {
+  0%, 49.41% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.41% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.41%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.41% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(90) {
+  -webkit-animation: cubeTransform89 15s infinite ease-in;
+          animation: cubeTransform89 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform89 {
+  0%, 48.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  63.49% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  78.49%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 48.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform89 {
+  0%, 48.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  63.49% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  78.49%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 48.49% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(91) {
+  -webkit-animation: cubeTransform90 15s infinite ease-in;
+          animation: cubeTransform90 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform90 {
+  0%, 14.5% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  29.5% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  44.5%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 14.5% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform90 {
+  0%, 14.5% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  29.5% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  44.5%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 14.5% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(92) {
+  -webkit-animation: cubeTransform91 15s infinite ease-in;
+          animation: cubeTransform91 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform91 {
+  0%, 3.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  18.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 3.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform91 {
+  0%, 3.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  18.01% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33.01%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 3.01% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(93) {
+  -webkit-animation: cubeTransform92 15s infinite ease-in;
+          animation: cubeTransform92 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform92 {
+  0%, 49.59% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.59% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.59%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.59% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform92 {
+  0%, 49.59% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  64.59% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  79.59%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 49.59% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(94) {
+  -webkit-animation: cubeTransform93 15s infinite ease-in;
+          animation: cubeTransform93 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform93 {
+  0%, 56.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  71.15% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  86.15%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 56.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform93 {
+  0%, 56.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  71.15% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  86.15%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 56.15% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(95) {
+  -webkit-animation: cubeTransform94 15s infinite ease-in;
+          animation: cubeTransform94 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform94 {
+  0%, 40.92% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  55.92% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  70.92%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 40.92% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform94 {
+  0%, 40.92% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  55.92% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  70.92%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 40.92% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(96) {
+  -webkit-animation: cubeTransform95 15s infinite ease-in;
+          animation: cubeTransform95 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform95 {
+  0%, 45.43% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  60.43% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  75.43%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 45.43% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform95 {
+  0%, 45.43% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  60.43% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  75.43%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 45.43% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(97) {
+  -webkit-animation: cubeTransform96 15s infinite ease-in;
+          animation: cubeTransform96 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform96 {
+  0%, 1.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  16.09% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  31.09%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 1.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform96 {
+  0%, 1.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  16.09% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  31.09%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 1.09% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+.cube:nth-child(98) {
+  -webkit-animation: cubeTransform97 15s infinite ease-in;
+          animation: cubeTransform97 15s infinite ease-in;
+}
+@-webkit-keyframes cubeTransform97 {
+  0%, 39.17% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  54.17% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  69.17%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 39.17% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+@keyframes cubeTransform97 {
+  0%, 39.17% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+  54.17% {
+    transform: translate3d(calc(var(--x) * 2em), calc(var(--y) * 2em), calc(var(--z) * 2em)) scale3d(1, 1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  69.17%, 100% {
+    transform: translate3d(calc(var(--x) * 3em), calc(var(--y) * 3em), calc(var(--z) * 3em)) scale3d(0, 0, 0);
+  }
+  100%, 39.17% {
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * 1em), calc(var(--z) * 1em)) scale3d(1, 1, 1);
+  }
+}
+
+.mainCube {
+  --hSize: 1.5em;
+  --bgSize: 3em;
+}
+
+i {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  border: 1px solid #5E85EB;
+  background-size: var(--bgSize) var(--bgSize);
+  background-image: radial-gradient(transparent, #111 var(--bgSize));
+  transition: 0.3s;
+}
+i:nth-child(1) {
+  --hue: 0;
+  background-position: calc((var(--x, 0) + 2) * 25%) calc((var(--y, 0) + 2) * 25%);
+  transform: translateZ(var(--hSize));
+}
+i:nth-child(2) {
+  --hue: 60;
+  background-position: calc((2 - var(--z, 0)) * 25%) calc((var(--y, 0) + 2) * 25%);
+  transform: rotateY(90deg) translateZ(var(--hSize));
+}
+i:nth-child(3) {
+  --hue: 120;
+  background-position: calc((2 - var(--x, 0)) * 25%) calc((var(--y, 0) + 2) * 25%);
+  transform: rotateY(180deg) translateZ(var(--hSize));
+}
+i:nth-child(4) {
+  --hue: 180;
+  background-position: calc((var(--z, 0) + 2) * 25%) calc((var(--y, 0) + 2) * 25%);
+  transform: rotateY(270deg) translateZ(var(--hSize));
+}
+i:nth-child(5) {
+  --hue: 240;
+  background-position: calc((var(--x, 0) + 2) * 25%) calc((var(--z, 0) + 2) * 25%);
+  transform: rotateX(90deg) translateZ(var(--hSize));
+}
+i:nth-child(6) {
+  --hue: 300;
+  background-position: calc((var(--x, 0) + 2) * 25%) calc((2 - var(--z, 0)) * 25%);
+  transform: rotateX(270deg) translateZ(var(--hSize));
+}/*# sourceMappingURL=email.css.map */

@@ -403,6 +403,10 @@ body {
   display: none;
 }
 
+.noise {
+  z-index: -1;
+}
+
 #project {
   transition: 0.3s;
   width: 320vw;

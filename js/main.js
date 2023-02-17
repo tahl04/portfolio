@@ -14,7 +14,7 @@ window.addEventListener("scroll",()=>{
     sections.forEach(section=>{
         //각 section의 top 위치(절대적 위치)
         // The top of each section (absolute)
-        const sectionTop = window.scrollY + section.getBoundingClientRect().top-150;
+        const sectionTop = window.scrollY + section.getBoundingClientRect().top-500;
 
         //누적된 스크롤이 section의 top위치에 도달했거나 section의 안에 위치할 경우
         //When the accumulated scroll reaches the top of the section or is located inside the section
