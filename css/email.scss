@@ -14,8 +14,10 @@ body {
 $duration: 15s;
 
 .scene {
+    top: 50%;
+    left: 50%;
     position: absolute;
-    font-size: 24px;
+    font-size: 40px;
     animation: sceneRotate 45s infinite linear;
 
     @keyframes sceneRotate {
@@ -213,5 +215,8 @@ i {
     transform: rotateX(270deg) translateZ(var(--hSize));
     }
 }
-  
-  
+.email-wrap{
+    width: 400px;
+    height: 400px;
+    border: 1px solid #5E85EB;
+}
